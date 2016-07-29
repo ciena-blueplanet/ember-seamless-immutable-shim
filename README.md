@@ -11,7 +11,7 @@ ember install ember-seamless-immutable-shim
 ## Usage
 
 ```js
-import ZSchema from ''
+import Immutable from 'seamles-immutable'
 ```
 
 To learn more about `seamless-immutable` and how to use it visit the [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) Github page.
