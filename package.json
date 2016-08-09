@@ -1,6 +1,6 @@
 {
   "name": "ember-seamless-immutable-shim",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Immutable data structures for Ember apps",
   "directories": {
     "doc": "doc",
