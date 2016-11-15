@@ -22,7 +22,7 @@ module.exports = {
     // Has to do this grandparent check because at some point we hit the project.
     do {
       app = current.app || app;
-    } while (current.parent.parent && (current = current.parent));
+    } while (current && current.parent && current.parent.parent && (current = current.parent));    
 
     return app;
   },
