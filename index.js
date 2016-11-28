@@ -6,25 +6,23 @@ const replace = require('broccoli-replace')
 
 module.exports = {
   name: 'seamless-immutable',
-  /**
+  /*
      This method climbs up the hierarchy of addons
      up to the host application.
      This prevents previous addons (prior to `this.import`, ca 2.7.0)
      to break at importing assets when they are used nested in other addons.
-     @private
-     @method _findHost
    */
-  _findHost: function() {
-    var current = this;
-    var app;
+  _findHost: function () {
+    var current = this
+    var app
 
     // Keep iterating upward until we don't have a grandparent.
     // Has to do this grandparent check because at some point we hit the project.
     do {
-      app = current.app || app;
-    } while (current && current.parent && current.parent.parent && (current = current.parent));    
+      app = current.app || app
+    } while (current && current.parent && current.parent.parent && (current = current.parent))
 
-    return app;
+    return app
   },
 
   treeForAddon (tree) {
