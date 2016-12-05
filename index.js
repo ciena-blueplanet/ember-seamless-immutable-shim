@@ -6,8 +6,27 @@ const replace = require('broccoli-replace')
 
 module.exports = {
   name: 'seamless-immutable',
+  /*
+     This method climbs up the hierarchy of addons
+     up to the host application.
+     This prevents previous addons (prior to `this.import`, ca 2.7.0)
+     to break at importing assets when they are used nested in other addons.
+   */
+  _findHost: function () {
+    var current = this
+    var app
+
+    // Keep iterating upward until we don't have a grandparent.
+    // Has to do this grandparent check because at some point we hit the project.
+    do {
+      app = current.app || app
+    } while (current && current.parent && current.parent.parent && (current = current.parent))
+
+    return app
+  },
 
   treeForAddon (tree) {
+    var app = this._findHost()
     const seamlessImmutablePath = path.dirname(require.resolve('seamless-immutable/src/seamless-immutable.js'))
     let seamlessImmutableTree = this.treeGenerator(seamlessImmutablePath)
 
@@ -18,7 +37,7 @@ module.exports = {
       patterns: [
         {
           match: /process\.env\.NODE_ENV/g,
-          replacement: `"${this.app.env}"`
+          replacement: `"${app.env}"`
         }
       ]
     })
