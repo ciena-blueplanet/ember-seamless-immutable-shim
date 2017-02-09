@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-- '5.0'
+- '6.9'
 - 'stable'
 branches:
   except:
@@ -73,7 +73,7 @@ deploy:
     branch: master
     condition: "$EMBER_TRY_SCENARIO = 'default'"
     node: 'stable'
-    tags: false
+    tags: true
 notifications:
   slack:
     secure: gbnDpemhgdH0Lw9DngVRR29No27NkX0Cv/di42uJ43JnMFV8xWemBcS4oi2rI9cc7ZZ8JCRHMG4MnopBfQ9j+OEO/IGLGacKs4p0JnSKq72lB5J2GrbtDjpL15Uvz9/JuCM6HdB6OddYtEKAKiw1NsU4ykXmy8gWBLnvP1s4fvooBQyAuEJnDb6Sf6FgRofvARM2KbDL4kiol0ikTEx/qYi6v6KUPy7V2sykbU/0Tq9LZpgKUuBepBc9d0VoWrDxaAGpv+K/YSPfSXxSsFp4iqfXt0ge+9LaNeszm7I0mI8Rh7I3FVpdxdr/Nam3ZQOU1551PPOUbqN6yI3tCK2yGR8lVunl1EFqO2wyA+cGXn2NTxZl4J/IDEcG12VoJU6JJMvpEY3vAHZnRBRawlnXvaadQ3xPDGTocJGs1ovcmQpM31sYobdNy9m15gWPNcJJMAYIdQRxTyRY/vSzRZL+Rcnyjtr1aq8r4s7xnCF2Bznxayi2nupDUi2DxsXeywabKr0/L/GmtzFBqWJTbwlvB3NaV//Gc9mrgPyvobl+rGYt10MfUd0EYiFAnyhnvxNbL/s2c7R7Y4d2/K8GWFOrRPujvgQYB5DO1/wikJNaI4EeOY+pJVV7DQQrBjwIg4xTxLhwgq02ih6z8g0Wm/FOd4N3QXJvbOZw/KtpJ3n41hc=

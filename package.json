@@ -8,9 +8,7 @@
   },
   "scripts": {
     "build": "ember build",
-    "lint": "npm run lint-js && npm run lint-md",
-    "lint-js": "eslint *.js addon app blueprints config tests",
-    "lint-md": "remark *.md",
+    "lint": "lint-all-the-things",
     "start": "ember server",
     "test": "npm run lint && ember test"
   },
@@ -42,12 +40,8 @@
     "ember-export-application-global": "^1.1.1",
     "ember-load-initializers": "0.6.3",
     "ember-resolver": "^2.1.1",
-    "ember-test-utils": "^1.8.0",
-    "eslint": "^3.13.1",
-    "eslint-config-frost-standard": "^5.3.2",
+    "ember-test-utils": "^1.10.3",
     "loader.js": "^4.1.0",
-    "remark-cli": "^2.1.0",
-    "remark-lint": "^5.4.0",
     "seamless-immutable": "6.3.0"
   },
   "keywords": [
