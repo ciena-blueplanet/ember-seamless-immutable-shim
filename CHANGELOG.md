@@ -1,3 +1,20 @@
+# 1.1.2
+
+* **Updated** CI to test in Chrome as well as Firefox.
+
+
+# 1.1.1
+
+* **Upgraded** to test against Ember 2.11.
+
+
+# 1.1.0
+
+* **Added** additional builds to CI to make sure addon works with latest versions of Ember.
+* **Removed** files from npm package that aren't necessary (all of the various config files).
+* **Updated** dependencies to latest versions.
+
+
 # 1.0.1
 
 * **Updated** Travis configuration to test addon against older versions of Ember.
