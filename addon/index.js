@@ -59,10 +59,23 @@ function patchArraySlice (array) {
  * @param {Object} object - object to get immutable copy of
  * @returns {Object} immutable object
  */
-export default function (object) {
+function immutable (object) {
   if (!Immutable.isImmutable(object)) {
     keepEmbersHandsOff(object)
   }
 
   return Immutable.call(this, ...arguments)
 }
+
+// Make sure to map methods from Immutable onto default export
+
+;[
+  'from',
+  'isImmutable',
+  'ImmutableError'
+]
+  .forEach((key) => {
+    immutable[key] = Immutable[key]
+  })
+
+export default immutable
