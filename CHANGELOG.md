@@ -1,3 +1,7 @@
+# 1.1.4
+
+* **Fixed** default export to monkey patch immutable objects in a way that keeps Ember from trying to add properties to them, which results in an exception. This allows immutable objects to be directly referenced in templates and computed properties.
+
 # 1.1.3
 
 * **Fixed** build to publish.
