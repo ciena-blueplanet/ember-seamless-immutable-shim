@@ -1,6 +1,7 @@
 import {Immutable} from './seamless-immutable'
 
 const {isArray} = Array
+const {defineProperty} = Object
 
 const NON_ENUMERABLE_KEY = '__defineNonEnumerable'
 
@@ -16,7 +17,13 @@ function noop () {}
  */
 function addNonEnumerableProperty (object) {
   if (object[NON_ENUMERABLE_KEY]) return
-  object[NON_ENUMERABLE_KEY] = noop
+
+  defineProperty(object, NON_ENUMERABLE_KEY, {
+    configurable: false,
+    enumerable: false,
+    value: noop,
+    writable: false
+  })
 }
 
 /**
