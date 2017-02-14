@@ -1,3 +1,8 @@
+# 1.1.5
+
+* **Fixed** bug where `__defineNonEnumerable` was showing up on immutable objects as an enumerable property.
+
+
 # 1.1.4
 
 * **Fixed** default export to monkey patch immutable objects in a way that keeps Ember from trying to add properties to them, which results in an exception. This allows immutable objects to be directly referenced in templates and computed properties.
