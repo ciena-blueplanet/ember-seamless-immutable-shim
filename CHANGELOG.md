@@ -1,3 +1,8 @@
+# 2.0.0
+
+* **Upgraded** to `seamless-immutable` version `7.0.1`.
+
+
 # 1.1.5
 
 * **Fixed** bug where `__defineNonEnumerable` was showing up on immutable objects as an enumerable property.
