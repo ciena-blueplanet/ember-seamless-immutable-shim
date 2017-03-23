@@ -1,3 +1,4 @@
+-/* eslint-disable complexity */
 (function() {
   "use strict";
 
