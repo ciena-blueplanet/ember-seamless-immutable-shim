@@ -1,3 +1,8 @@
+# 2.0.1 (2017-05-11)
+
+* **Added** `.pr-bumper.json`
+
+
 # 2.0.0
 
 * **Upgraded** to `seamless-immutable` version `7.0.1`.
