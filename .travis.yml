@@ -22,20 +22,9 @@ cache:
 
 env:
   matrix:
-  - EMBER_TRY_SCENARIO=ember-1-12
-  - EMBER_TRY_SCENARIO=ember-1-13
-  - EMBER_TRY_SCENARIO=ember-2-0
-  - EMBER_TRY_SCENARIO=ember-2-1
-  - EMBER_TRY_SCENARIO=ember-2-2
-  - EMBER_TRY_SCENARIO=ember-2-3
-  - EMBER_TRY_SCENARIO=ember-2-4
-  - EMBER_TRY_SCENARIO=ember-2-5
-  - EMBER_TRY_SCENARIO=ember-2-6
-  - EMBER_TRY_SCENARIO=ember-2-7
-  - EMBER_TRY_SCENARIO=ember-2-8
-  - EMBER_TRY_SCENARIO=ember-2-9
-  - EMBER_TRY_SCENARIO=ember-2-10
-  - EMBER_TRY_SCENARIO=default
+  - EMBER_TRY_SCENARIO=ember-lts-2.4
+  - EMBER_TRY_SCENARIO=ember-lts-2.8
+  - EMBER_TRY_SCENARIO=ember-default
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
@@ -46,24 +35,30 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
+  - env: EMBER_TRY_SCENARIO=ember-release
   - env: EMBER_TRY_SCENARIO=ember-beta
   - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
 - npm config set spin false
-- npm install -g coveralls pr-bumper
+- npm install -g coveralls pr-bumper@^1.0.0
+- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
 
 install:
 - $(npm root -g)/pr-bumper/.travis/maybe-install.sh
 
+before_script:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+- sleep 3 # give xvfb some time to start
+
 script:
 - $(npm root -g)/pr-bumper/.travis/maybe-test.sh
-- if [ $EMBER_TRY_SCENARIO == "default" ]; then $(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh; fi
+- .travis/maybe-bump-version.sh
 
 after_success:
-- $(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh
+- .travis/maybe-publish-coverage.sh
+
 deploy:
   provider: npm
   email: npm.ciena@gmail.com
@@ -72,8 +67,8 @@ deploy:
     secure: VneLBwj7gMKLE8DaM4EXSPLJzL3gNsHMWXMkLDH7FA2ZqQwRvYrXKy+bkGOlfkIF5sq1G8Xj4piXagpo2KcYrBZDaskghwYXsn7M/w1hBjtCa2YVmeAt0b/I9DEHSwp39iXjZdITuX1uC+c7NHfUZPhvFyFMLiqo1ON20Ka4cZake2Z1q+QFkPmGG+bAY1mB8hehRopbu5G+H93zjPjTZJI3J8eMTol/3Cko4CMN08PMnExmIvBjHRc32GbqJxeQFCRrQDFVml/cXBF5ThND5AxrDA/2ufdNm2R+wEHyrQnc/DKopsXfPH1e4aG2/gF8/PCj0OY/bzMXYVAJ8vc/j0bFf/qs/M+UC9aJfiM0nbAkFiC4D2aNxggz3i4a/94ipKUfg6GBgQqL95CzU9MlSuxIFbM7JmIPz153JZOvMBdBtQAgnU+lyPJKV8WivGR9DNZKgNcy/Y72IfnYo5gk1LiG6CK5tDaiS5XpoVucGDChrrPdwMCHWF82bedV68OdNPRyzaQFUPVOVwcIQxf4M/EqybLV1u0/v02DPIehlLlKO7zTOfuvDw9YyhgU4UAiDJQjUgbqQTgeYPhyuOhdqtp9ipFDn9Eegjv4dF47R1MTEo0RRhnrL9Qp8zvlj0PJjd+IB1S7MB8eHpjM/EA6AcugGlnwh7aJC32LKQAsMLg=
   on:
     all_branches: true
-    condition: "$EMBER_TRY_SCENARIO = 'default'"
-    node: 'stable'
+    condition: "$EMBER_TRY_SCENARIO = 'ember-default'"
+    node: '6.9.1'
     tags: true
 
 notifications:
