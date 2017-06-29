@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ciena-blueplanet/ember-seamless-immutable-shim",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": ">= 6.0.0"
   },
   "bugs": {
     "url": "https://github.com/ciena-blueplanet/ember-seamless-immutable-shim/issues"
