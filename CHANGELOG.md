@@ -1,3 +1,8 @@
+# 2.0.2 (2017-06-29)
+* **Updated** to Ember CLI 2.12.3 and Ember 2.12.x
+* **Updated** ember-try config matrix with Ember LTS 2.4 and LTS 2.8
+* **Updated** travis.yml build matrix to run Ember LTS 2.4, LTS 2.8 and default (Ember LTS 2.12) 
+
 # 2.0.1 (2017-05-11)
 
 * **Added** `.pr-bumper.json`
