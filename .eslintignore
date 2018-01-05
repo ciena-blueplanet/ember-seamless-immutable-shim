@@ -1,3 +1,4 @@
+addon/index.js
 bower_components/**/*
 dist/**/*
 node_modules/**/*
