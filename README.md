@@ -2,6 +2,8 @@
 
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url] ![Ember][ember-img]
 
+This addon provides an Ember shim for version `15.0.1` of the [seamless-immutable](https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L21) package.
+
 ## Installation
 
 ```bash
