@@ -5,7 +5,7 @@ import immutable from 'seamless-immutable'
 const NON_ENUMERABLE_KEY = '__defineNonEnumerable'
 
 describe('seamless-immutable', function () {
-  it('immutable is a single module that has been exported', function () {
+  it('should have a single module that has been exported', function () {
     expect(typeof immutable).to.equal('function')
   })
 
@@ -20,7 +20,7 @@ describe('seamless-immutable', function () {
       })
     })
 
-  it('does not let Ember try to mutate immutable objects', function () {
+  it('should not let Ember try to mutate immutable objects', function () {
     expect(typeof immutable({baz: 'test'})[NON_ENUMERABLE_KEY]).to.equal('function')
   })
 })
