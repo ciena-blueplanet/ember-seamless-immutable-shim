@@ -1,3 +1,23 @@
+# 3.0.0 (2018-01-05)
+* **Added** `bower` devDependency @ `^1.8.2`
+* **Added** `ember-frost-test` @ `^4.0.0`
+* **Added** `chai-jquery` @ `^2.0.0`
+* **Updated** `ember-cli-chai` to `0.4.3`
+* **Updated** to pin `ember-cli-htmlbars-inline-precompile` @ `0.3.12`
+* **Updated** `ember-cli-mocha` to `0.14.4`
+* **Added** `ember-hook` @ `1.4.2`
+* **Added** `ember-sinon` @ `^0.7.0`
+* **Updated** `ember-test-utils` to `^8.1.0`
+* **Added** `sinon-chai` @ `^2.14.0`
+* **Added** ignoring of `package-lock` until we are ready to move to node 8
+* **Added** ignoring of linting of source of seamless-immutable in `addon/index.js`
+* **Added** ignoring of linting the CHANGELOG.md file
+* **Removed** blueprints since installation of files is now via dependencies
+* **Removed** useLintTree ember-cli-mocha configuration from `ember-cli-build.js`
+* **Updated** `ember-cli-htmlbars` to be a devDependency
+* **Updated** README with the version of seamless-immutable that this shim is using
+  
+
 # 2.0.2 (2017-06-29)
 * **Updated** to Ember CLI 2.12.3 and Ember 2.12.x
 * **Updated** ember-try config matrix with Ember LTS 2.4 and LTS 2.8
