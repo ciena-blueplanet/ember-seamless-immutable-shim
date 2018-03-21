@@ -1,3 +1,15 @@
+# 3.0.1 (2018-03-20)
+* Updated pull request template
+* Added issue template
+* Updated to pr-bumper version 3
+* Updated to node 8
+* Added slack integration
+* Updated ember-frost-test to ^4.0.1
+* Updated ember-test-utils to ^8.1.1
+* Removed ignoring of package-lock.json file
+* Added package-lock.json file
+* Updated Travis CI scripts to allow non-exact node version
+
 # 3.0.0 (2018-01-05)
 * **Added** `bower` devDependency @ `^1.8.2`
 * **Added** `ember-frost-test` @ `^4.0.0`
@@ -16,12 +28,12 @@
 * **Removed** useLintTree ember-cli-mocha configuration from `ember-cli-build.js`
 * **Updated** `ember-cli-htmlbars` to be a devDependency
 * **Updated** README with the version of seamless-immutable that this shim is using
-  
+
 
 # 2.0.2 (2017-06-29)
 * **Updated** to Ember CLI 2.12.3 and Ember 2.12.x
 * **Updated** ember-try config matrix with Ember LTS 2.4 and LTS 2.8
-* **Updated** travis.yml build matrix to run Ember LTS 2.4, LTS 2.8 and default (Ember LTS 2.12) 
+* **Updated** travis.yml build matrix to run Ember LTS 2.4, LTS 2.8 and default (Ember LTS 2.12)
 
 # 2.0.1 (2017-05-11)
 
