@@ -1,3 +1,8 @@
+# 4.0.1 (2018-10-18)
+
+* ember-get-config dependency using babel 6.3
+
+
 # 4.0.0 (2018-10-16)
 
 * Upgrade ember-cli-babel to 6.6.0
